@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SpaceBase - Casino</title>
+    <!--creating the style to display text and button in center of page-->
+    <style>
+      h1 {text-align: center;}
+      p {text-align: center; font-size: 50px}
+      h2 {text-align: center;}
+      button {text-align: center; position: relative; left: 46.2%;}
+      body {
+  background-color: ivory;
+}
+      </style>
+</head>
+    <body>
+<h1>Star Wars Casino: Canto Bight</h1>
+<h2>No Jedi Allowed!</h2>
+<!--image of scene from Star Wars world Canto Bight will appear-->
+<center><img src="https://www.fanthatracks.com/wp-content/uploads/2018/12/mastercodebreaker_template_1.jpg"></center>
+<!--The code below will create the button and the function to display the number randomly generated from the die-->
+<p id="DieRoll">
+  
+</p>
+<!--the button should display the text "Roll The Die"-->
+<button id="button">Roll The Die</button>
+<!--according to web resources, the following two lines should like the button to the JS code-->
+<script src="dice.js"></script>
+<script src="ui.js"></script>
+
+<script>
+  
+  // the following will set the parameters for the die roll
+  // the die roll will remain between 1 & 6
+    var dice = {
+        sides: 6,
+        roll: function randomRoll() {
+          // the variable will randomly generate a number between 1 & 6
+          var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+          //Math.floor will round down to nearest number
+          //Math.random will return to a new pseudorandom number between zero (inclusive) and one (exclusive) every time you call it.
+          //randomNumber now represents the command to both round the number to the nearest whole number and to randomize the roll.
+          return randomNumber;
+          // die roll return to the intial function of randomly selecting a number when the user interacts with the button
+
+        }
+      }
+      
+//The following is a result of research on the web for displaying the randomized numbers, one at a time
+
+function printNumber(number) {
+  var DieRoll = document.getElementById('DieRoll');
+  DieRoll.innerHTML = number;
+}
+// the following line of code should call the button element previous created
+var button = document.getElementById('button');
+
+// the button must be clicked on to interact with the function above (ie: random die roll)
+button.onclick = function RollDieOnce() {
+  var result = dice.roll(); 
+  printNumber(result);
+  // a random number should display to user using the printNumber(result)
+  // this should occur each time the user clicks the "Roll the Die" button
+  
+};
+
+    </script>
+
+
+</body>
+</html>
