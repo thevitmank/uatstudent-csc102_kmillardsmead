@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-color: antiquewhite;"></body>
+    <!--This file was created by Kevin Millard Smead, a student at UAT-->
+<head>
+    <title>Blastoff Countdown</title>
+    
+    
+    
+    <!--the following code is to center text on the page, but not the button-->
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        h2 {text-align: center;}
+        </style>
+       
+</head>
+<body>
+    <script>
+        // comments in javascript are input like this
+        //This is the beginning of out script for java
+        function BeginCountdown()
+        {
+            // here you will enter the var to start and control the countdown
+            let countdown = 10;
+            // 1000 = 1 sec due to use of milliseconds
+            let timeout = 10000;
+            
+           let blastoff = 'Blastoff!'
+           console.log(blastoff)
+           
+           
+
+
+         
+
+// here is where we begin forming the loop
+            for (i = 10; i >= 0; i--){
+
+            setTimeout (() => {
+                document.getElementById("CountdownDisplay").innerHTML = blastoff
+        }, 10000)
+// delayed message for warning to launch
+            setTimeout (() => {
+                document.getElementById('warning').innerHTML = 'Warning! Less than halfway to launch.'
+            }, 5000)
+                
+// display for actual countdown
+            setTimeout(() => {
+            
+                document.getElementById("CountdownDisplay").innerHTML = countdown;
+                countdown = countdown - 1;
+            }, timeout)
+            timeout = timeout - 1000;
+        }
+            
+      
+
+    }
+     // feedback on how to make this code more efficent would be extremely helpful
+   
+     
+
+    
+    
+            
+
+    </script>
+    
+    <!--This will be what displays to the user including the clickable button-->
+    <h1>Blastoff Countdown</h1>
+    <p>Click the button below to begin the countdown!</p>
+    <p id='warning'></p>
+    
+    <h2>Countdown Timer</h2>
+    <!--Creating a button for UAT Space Countdown-->
+    <!--I also researched the web on how to center the button, as it does not go along with the text alignment function-->
+    <button type="button" onclick="BeginCountdown()"; style="position: relative; left: 45%;">Begin Countdown</button>
+    <p style="font-size: 50px;"; id="CountdownDisplay">10</p>
+    
+</body>
+
+</html>
