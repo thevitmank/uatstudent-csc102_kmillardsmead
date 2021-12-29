@@ -14,7 +14,7 @@ background-attachment: fixed;
 background-size: 100% 100%;
 }
 img {
-    width: 100%;
+    width: 50%;
 }
 table, th, td {
   border: 1px solid black;
@@ -23,11 +23,11 @@ th, td {
   background-color: whitesmoke;
 }
     </style>
-<!--unsure why logo is not displaying at this time-->    
-    <img src='/downloads/UATspaceLogo.jpg'
+    
+    <img src='/Users/kevin/Downloads/UATspaceLogo.jpg'
     alt='UAT Space Logo'
-    width="350"
-    height="350">
+    width="250"
+    height="250">
     <title>UAT SPACE PROGRAM</title>
     <h1 style="color: yellow;">UAT Space Program: Launch Table</h1>
 </head>
@@ -54,8 +54,7 @@ th, td {
 <td>Latitude:</td>
 <td id="outward">0</td>    
 </tr>
-</table>
-<!--table data ends and buttons and their actions go here-->
+</table>  
 <p><button id="StartBtn" onClick="myTimer = setInterval(myCounter, 1000), 
     myAlt = setInterval(spaceAlt, 10), 
     myLong = setInterval(spaceLong, 200),
@@ -71,15 +70,13 @@ th, td {
     disableStopBtn()">
     Stop</button></p>  
 <script>
-
 //event coding begins here
 //code should enable and disable start/stop buttons
 let timeout = 0
 function myCounter() {
     document.getElementById("timer").innerHTML = ++timeout
 }
-
-//location based data here [not actual location coding]
+//location based data here
 let altlocation = 0
 function spaceAlt() {
     document.getElementById("upward").innerHTML = ++altlocation
@@ -92,7 +89,6 @@ let rise = 0
 function spaceLat() {
     document.getElementById("outward").innerHTML = ++rise
 }
-
 //disable and enable the start and stop buttons
 function disableStartBtn() {
     document.getElementById("StartBtn").disabled = true;
