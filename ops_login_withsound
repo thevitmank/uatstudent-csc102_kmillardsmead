@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--created by Kevin Millard for CSC102-->
 <head>
     <audio controls autoplay>
     <source src="/Users/kevin/Downloads/us-lab-background.mp3" type="audio/mpeg">
