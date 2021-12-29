@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--created by Kevin Millard-Smead, UAT Student, CSC102-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--set up design styles, including element sizes and colors-->
+    <style>
+        body {
+background-color: rgba(21, 127, 197, 0.877);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+img {
+    width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  background-color: whitesmoke;
+}
+    </style>
+<!--unsure why logo is not displaying at this time-->    
+    <img src='/downloads/UATspaceLogo.jpg'
+    alt='UAT Space Logo'
+    width="350"
+    height="350">
+    <title>UAT SPACE PROGRAM</title>
+    <h1 style="color: yellow;">UAT Space Program: Launch Table</h1>
+</head>
+<!--begin building the body with at least three elements (time elapsed, altitude, etc.)-->
+<!--objective is to have working buttons that start/stop the events from the js-->
+<!--don't forget to include at least one creative element-->
+<body>
+    
+<!--the following is an example of the start/stop buttons-->
+<table style="width:70%">
+<tr>
+<td>Time Elapsed (seconds):</td>   
+<td id="timer">0</td>
+</tr>
+<tr>
+<td>GPS Altitude:</td>
+<td id="upward">0</td>
+</tr>
+<tr>
+<td>Longitude:</td>
+<td id="distance">0</td>
+</tr>
+<tr>
+<td>Latitude:</td>
+<td id="outward">0</td>    
+</tr>
+</table>
+<!--table data ends and buttons and their actions go here-->
+<p><button id="StartBtn" onClick="myTimer = setInterval(myCounter, 1000), 
+    myAlt = setInterval(spaceAlt, 10), 
+    myLong = setInterval(spaceLong, 200),
+    myLat = setInterval(spaceLat, 150),
+    disableStartBtn(),
+    enableStopBtn()">
+    Start</button>
+    <button id="StopBtn" onClick="clearInterval(myTimer), 
+    clearInterval(myAlt),
+    clearInterval(myLat),  
+    clearInterval(myLong),
+    enableStartBtn(),
+    disableStopBtn()">
+    Stop</button></p>  
+<script>
+
+//event coding begins here
+//code should enable and disable start/stop buttons
+let timeout = 0
+function myCounter() {
+    document.getElementById("timer").innerHTML = ++timeout
+}
+
+//location based data here [not actual location coding]
+let altlocation = 0
+function spaceAlt() {
+    document.getElementById("upward").innerHTML = ++altlocation
+}
+let run = 0
+function spaceLong() {
+    document.getElementById("distance").innerHTML = ++run
+}
+let rise = 0
+function spaceLat() {
+    document.getElementById("outward").innerHTML = ++rise
+}
+
+//disable and enable the start and stop buttons
+function disableStartBtn() {
+    document.getElementById("StartBtn").disabled = true;
+}
+
+function enableStartBtn() {
+    document.getElementById("StartBtn").disabled = false;
+}
+function disableStopBtn() {
+    document.getElementById("StopBtn").disabled = true;
+}
+
+function enableStopBtn() {
+    document.getElementById("StopBtn").disabled = false;
+}
+</script>
+<!--once program has successfully run, don't forget to take screenshots-->
+</body>
+</html>
