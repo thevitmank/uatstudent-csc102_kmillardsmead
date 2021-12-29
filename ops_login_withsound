@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <audio controls autoplay>
+    <source src="/Users/kevin/Downloads/us-lab-background.mp3" type="audio/mpeg">
+    </audio>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceBase Operations</title>
+    
+    <!--create input field and button below this heading-->
+    <!--Don't forget to include a visual element (ie: image, background)-->
+    <style>
+
+        h1 {text-align: center;}
+        p {text-align: center;}
+        h2 {text-align: center;}
+        </style>
+
+    <script>
+        // create a login feild that requests last name, first name, and badge number
+        // badge number should be three digits (ie: >1000)
+        // use a 'loop' function to create conditions for login (invalid & valid)
+        function validate(){
+            var lastname = document.getElementById("lastname").nodeValue;
+            var firstname = document.getElementById("firstname").nodeValue; 
+            var badgenumber = document.getElementById("passcode").nodeValue; 
+        
+            
+            // loop begins here for validation
+            // length of names >20 non-digit charcters
+            //create alerts for successful and unsuccessful login
+            if (lastname==/^[A-Za-z]$/ && firstname==/^[A-Za-z]$/ && badgenumber==/^[0-9]$/)
+            {
+                alert('Welcome to SpaceBase');
+                return false;
+            }
+            else
+            {
+                alert('Login Failed');
+
+            }
+        
+        }
+        
+          </script>  
+
+</head>
+<body>
+
+    <form class = "box" action="operation_login.html" method="post"></form>
+<!--Image below of taken from NASA.gov website-->
+<center>
+    
+    <style>
+        body {
+background-image: url('https://www.nasa.gov/images/content/122517main_STS121-S-002.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+
+    </style>
+<!--Create heading for instruction authorized personnel to login-->
+<h1 style="color:azure">Authorized Personnel Only</h1>
+<!--Text fields for login-->
+<h2 style="color:azure">Enter Your Credentials</h2>
+<input type="text" name="lastname" placeholder="Enter LastName" id="lastname" maxlength="20">
+<input type="text" name="firstname" placeholder="Enter FirstName" id="firstname" maxlength="20">
+<input type="password" name="badgenumber" placeholder="Enter Badge#" id="passcode" maxlength="3">
+
+<button type="submit" name="logininfo" value="login" onclick="validate()">Login</button>
+</center>
+
+</body>
+</html>
